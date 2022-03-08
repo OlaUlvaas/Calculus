@@ -18,6 +18,10 @@ public class Main {
             if(choose == '+'){
                 addition();
             }
+            if(choose == '-'){
+                subtraction();
+            }
+
 
 
         }while(on);
@@ -42,6 +46,32 @@ public class Main {
             if(c == 'y'|| c == 'Y'){
                 System.out.println("Add another number please: ");
                 answer += scanner.nextDouble();
+            }
+            else if(c == 'n' || c == 'N'){
+                break;
+            }
+        }while(ok);
+
+        System.out.println("The answer is: " + answer);
+    }
+    private static void subtraction() {
+        Scanner scanner = new Scanner(System.in);
+        double answer = 0;
+        char c;
+        boolean ok = true;
+
+        System.out.println("Enter a number: ");
+        answer += scanner.nextDouble();
+        System.out.println("One more please: ");
+        answer -= scanner.nextDouble();
+
+        do{
+            System.out.println("Do you want to subtract another number? ( y / n ): ");
+            c = scanner.next().charAt(0);
+
+            if(c == 'y'|| c == 'Y'){
+                System.out.println("One more number please: ");
+                answer -= scanner.nextDouble();
             }
             else if(c == 'n' || c == 'N'){
                 break;
