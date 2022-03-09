@@ -27,11 +27,24 @@ public class Main {
             if(choose == '/'){
                 division();
             }
+            if(choose == 'P'){
+                powerOf();
+            }
 
 
 
         }while(on);
 
+    }
+    private static void powerOf(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("Enter a base: ");
+        double base = scanner.nextDouble();
+        System.out.println("Enter an exponent: ");
+        double exponent = scanner.nextDouble();
+
+        double answer = Math.pow(base, exponent);
+        System.out.println("The " + exponent + " power of " + base + " is: " + answer);
     }
 
     private static void addition() {
@@ -161,6 +174,12 @@ public class Main {
         System.out.println("***              SUBTRACTION (-)            ***");
         System.out.println("***             MULTIPLICATION (*)          ***");
         System.out.println("***                DIVISION (/)             ***");
+        System.out.println("***                 MODULO (%)              ***");
+        System.out.println("***                POWER OF (P)             ***");
+        System.out.println("***              SQUARE ROOT (S)            ***");
+        System.out.println("***                DIVISION (/)             ***");
+
+
         System.out.println("***********************************************");
     }
 
