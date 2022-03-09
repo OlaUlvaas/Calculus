@@ -27,6 +27,9 @@ public class Main {
             if(choose == '/'){
                 division();
             }
+            if(choose == '%'){
+                modulo();
+            }
             if(choose == 'P' || choose == 'p'){
                 powerOf();
             }
@@ -156,7 +159,7 @@ public class Main {
             System.out.println("You can't divide by zero, try another number: ");
         }
         else{
-            answer = nominator/denominator;
+            answer = nominator / denominator;
         }
 
 
@@ -181,6 +184,48 @@ public class Main {
 
         System.out.println("The answer is: " + answer);
     }
+    private static void modulo() {
+        Scanner scanner = new Scanner(System.in);
+        double answer = 0;
+        double nominator = 0;
+        double denominator = 0;
+        char c;
+        boolean ok = true;
+
+        System.out.println("Enter a numerator: ");
+        nominator = scanner.nextDouble();
+        System.out.println("And a denominator: ");
+        denominator = scanner.nextDouble();
+
+        if(denominator == 0){
+            System.out.println("You can't divide by zero, try another number: ");
+        }
+        else{
+            answer = nominator % denominator;
+        }
+
+
+        do{
+            System.out.println("Do you want to continue dividing? ( y / n ): ");
+            c = scanner.next().charAt(0);
+
+            if(c == 'y'|| c == 'Y'){
+                System.out.println("Divide by: ");
+                denominator = scanner.nextDouble();
+                if(denominator == 0){
+                    System.out.println("You can't divide by zero, try another number: ");
+                }
+                else{
+                    answer %= denominator;
+                }
+            }
+            else if(c == 'n' || c == 'N'){
+                break;
+            }
+        }while(ok);
+
+        System.out.println("The answer is: " + answer);
+    }
     private static void menu() {
         System.out.println();
         System.out.println();
@@ -192,9 +237,7 @@ public class Main {
         System.out.println("***                 MODULO (%)              ***");
         System.out.println("***                POWER OF (P)             ***");
         System.out.println("***              SQUARE ROOT (S)            ***");
-        System.out.println("***                DIVISION (/)             ***");
-
-
+        System.out.println("***                QUIT (Q)                 ***");
         System.out.println("***********************************************");
     }
 
