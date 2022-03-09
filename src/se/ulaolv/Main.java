@@ -24,6 +24,9 @@ public class Main {
             if(choose == '*'){
                 multiplication();
             }
+            if(choose == '/'){
+                division();
+            }
 
 
 
@@ -110,6 +113,48 @@ public class Main {
         System.out.println("The answer is: " + answer);
     }
 
+    private static void division() {
+        Scanner scanner = new Scanner(System.in);
+        double answer = 0;
+        double nominator = 0;
+        double denominator = 0;
+        char c;
+        boolean ok = true;
+
+        System.out.println("Enter a numerator: ");
+        nominator = scanner.nextDouble();
+        System.out.println("And a denominator: ");
+        denominator = scanner.nextDouble();
+
+        if(denominator == 0){
+            System.out.println("You can't divide by zero, try another number: ");
+        }
+        else{
+            answer = nominator/denominator;
+        }
+
+
+        do{
+            System.out.println("Do you want to continue dividing? ( y / n ): ");
+            c = scanner.next().charAt(0);
+
+            if(c == 'y'|| c == 'Y'){
+                System.out.println("Divide by: ");
+                denominator = scanner.nextDouble();
+                if(denominator == 0){
+                    System.out.println("You can't divide by zero, try another number: ");
+                }
+                else{
+                    answer /= denominator;
+                }
+            }
+            else if(c == 'n' || c == 'N'){
+                break;
+            }
+        }while(ok);
+
+        System.out.println("The answer is: " + answer);
+    }
     private static void menu() {
         System.out.println("******           OLAS CALCULUS           ******");
         System.out.println("***               ADDITION (+)              ***");
