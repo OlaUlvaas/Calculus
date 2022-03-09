@@ -27,14 +27,27 @@ public class Main {
             if(choose == '/'){
                 division();
             }
-            if(choose == 'P'){
+            if(choose == 'P' || choose == 'p'){
                 powerOf();
+            }
+            if(choose == 'S' || choose == 's'){
+                squareRoot();
+            }
+            if(choose == 'Q' || choose == 'q'){
+                System.out.println("The calculator is turned of. ");
+                on = false;
             }
 
 
 
         }while(on);
 
+    }
+    private static void squareRoot(){
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("What number do you want to take the square root of?: ");
+        double square = scanner.nextDouble();
+        System.out.println(Math.sqrt(square));
     }
     private static void powerOf(){
         Scanner scanner = new Scanner(System.in);
@@ -169,6 +182,8 @@ public class Main {
         System.out.println("The answer is: " + answer);
     }
     private static void menu() {
+        System.out.println();
+        System.out.println();
         System.out.println("******           OLAS CALCULUS           ******");
         System.out.println("***               ADDITION (+)              ***");
         System.out.println("***              SUBTRACTION (-)            ***");
